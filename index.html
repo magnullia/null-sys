@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <!-- Include Bulma CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Null Systems</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="#">
-            <img src="img/logoipsum-298.svg" width="112" height="28">
+            <strong>Null Systems</strong>
         </a>
-
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -25,32 +24,14 @@
 
     <div id="navbarBasic" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item">
-                Home
-            </a>
-            <a class="navbar-item">
-                Services
-            </a>
-
+            <span class="navbar-item is-active">Home</span>
+            <a class="navbar-item" href="services.html">Services</a>
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                    More
-                </a>
-
-                <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                        About
-                    </a>
-                    <a class="navbar-item">
-                        Resources
-                    </a>
-                    <a class="navbar-item">
-                        Contact
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item">
-                        Report an issue
-                    </a>
+                <a class="navbar-link">More</a>
+                <div class="navbar-dropdown is-dark">
+                    <a class="navbar-item" href="about.html">About</a>
+                    <a class="navbar-item" href="resources.html">Resources</a>
+                    <a class="navbar-item" href="contact.html">Contact</a>
                 </div>
             </div>
         </div>
@@ -58,34 +39,60 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="hero is-primary">
+<section class="hero is-dark is-medium">
     <div class="hero-body">
         <div class="container">
             <h1 class="title">
-                Welcome to My Website
+                Welcome to Null Systems
             </h1>
             <h2 class="subtitle">
-                Subtitle goes here
+                Your Partner in Custom System Configurations and Technology Solutions
             </h2>
+            <a class="button is-dark is-large" href="#">Learn More</a>
         </div>
     </div>
 </section>
 
-<!-- Content Section -->
+<!-- Services Section -->
 <section class="section">
     <div class="container">
+        <h2 class="title has-text-centered">Our Services</h2>
         <div class="columns">
             <div class="column">
-                <h3 class="title">Column 1</h3>
-                <p>This is the first column.</p>
+                <div class="box">
+                    <h3 class="title is-4">Custom System Configurations</h3>
+                    <p>Placeholder text for a brief description of the custom systems you provide. This is where you can give a short summary of the services and the unique value proposition of your business.</p>
+                    <a class="button is-dark" href="#">Read More</a>
+                </div>
             </div>
             <div class="column">
-                <h3 class="title">Column 2</h3>
-                <p>This is the second column.</p>
+                <div class="box">
+                    <h3 class="title is-4">Consulting Services</h3>
+                    <p>Placeholder text for a brief description of consulting services. Outline what clients can expect from your expert advice and how it can benefit their operations.</p>
+                    <a class="button is-dark" href="#">Read More</a>
+                </div>
             </div>
             <div class="column">
-                <h3 class="title">Column 3</h3>
-                <p>This is the third column.</p>
+                <div class="box">
+                    <h3 class="title is-4">Support and Maintenance</h3>
+                    <p>Placeholder text for a brief description of support and maintenance services. Mention the ongoing support you offer and how it ensures system reliability and performance.</p>
+                    <a class="button is-dark" href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="section is-medium has-background-dark">
+    <div class="container">
+        <div class="columns is-vcentered">
+            <div class="column is-half">
+                <h2 class="title">Ready to Start Your Project?</h2>
+                <p>Contact us today to discuss how Null Systems can help you with your technology needs. Our team of experts is ready to provide tailored solutions for your business.</p>
+            </div>
+            <div class="column is-half">
+                <a class="button is-dark is-large" href="#">Contact Us</a>
             </div>
         </div>
     </div>
@@ -95,12 +102,29 @@
 <footer class="footer">
     <div class="content has-text-centered">
         <p>
-            <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            &copy; 2024 Null Systems. All rights reserved.
         </p>
     </div>
 </footer>
+
+<!-- Bulma Scripts -->
+<script>
+    // Burger menu toggle for mobile view
+    document.addEventListener('DOMContentLoaded', () => {
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        if ($navbarBurgers.length > 0) {
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+                });
+            });
+        }
+    });
+</script>
 
 </body>
 </html>
